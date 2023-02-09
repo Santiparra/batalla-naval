@@ -10,14 +10,18 @@ class GameBoard {
         }return this.squares
     }
 
-    buildIndex (coordsX, coordsY) {
-        return 
+    buildIndex (arrayCCs) {
+        return Number (arrayCCs.join(''))
     }
 
-   /*  placeShip (shipSize, coordsX, coordsY) {
-        const index = Number coordsX + coordsY
-        this.squares.splice(index, shipSize, "ship"*shipSize) 
-        return index
-    } */
+    placeShip (shipSize, arrayCCs) {
+        const index = Number (arrayCCs.join(''))
+        for (let i = 0; i < shipSize; i++) {
+            this.squares.splice(index+i, shipSize, "ship")     
+            }
+        
+
+        return this.squares
+    } 
 }
 export default GameBoard
