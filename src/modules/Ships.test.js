@@ -1,14 +1,19 @@
 import { Ship } from "./Ships";
  
-test('are ships being created', () => {
-    expect(newShip).toEqual({ length: 3, hits: 0 })
+describe ("ship factory", () => {
+    const newShip = new Ship(2,0,false);
+    test('are ships being created', () => {
+        expect(newShip.hits).toStrictEqual([])
+    })
+    test("is hit hitting", () => {
+        newShip.hit(3)
+        expect(newShip.hits).toContain(3)
+    })
+    test("is sink sinking", () => {
+        expect(newShip.isSunk(3,3)).toBe(true)
+    })
 })
 
-test("is hit hitting", () => {
-    ship.hit()
-    expect(ship.hits).toBe(1)
-})
 
-test("is sink sinking", () => {
-    expect(ship.isSunk(3,3)).toBe(true)
-})
+
+

@@ -1,17 +1,15 @@
 export class Ship {
     constructor (length, hits, sunk) {
         this.length = length;
-        this.hits = 0;
+        this.hits = [];
         this.sunk = false;
-        
-        const hit = () => {
-            return this.hits++
+    }
+        hit (x) {
+            this.hits.push(x)
         }
 
-        const isSunk = (length, hits) => {
-           if (this.length === this.hits) {return true }  
+        isSunk (length, hits) {
+           if (length === hits) {return true }  
            else return false     
         } 
-    }
-} 
-
+}
