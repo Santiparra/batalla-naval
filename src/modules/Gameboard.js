@@ -9,6 +9,7 @@ class GameBoard {
         this.Submarine = new Ship("Submarine",3,0,false);
         this.Destroyer = new Ship("Destroyer",2,0,false);
     }
+
     createBoard () {
         for (let x = 0; x < 10; x++) {
             for (let y = 0; y < 10; y++) {
@@ -33,9 +34,17 @@ class GameBoard {
         return this.squares
     } 
 
-    //takes a pair of coordinates, determines whether or not 
-    //the attack hit a ship and then sends the ‘hit’ function to 
-    //the correct ship, or records the coordinates of the missed shot.
+    checkWin () {
+        if (this.Carrier.isSunk(this.Carrier.length, this.Carrier.hits.length) == true &&
+            this.Battleship.isSunk(this.Battleship.length, this.Battleship.hits.length) == true &&
+            this.Cruiser.isSunk(this.Cruiser.length, this.Cruiser.hits.length) == true &&
+            this.Submarine.isSunk(this.Submarine.length, this.Submarine.hits.length) == true &&
+            this.Destroyer.isSunk(this.Destroyer.length, this.Destroyer.hits.length) == true) {
+                return true
+        } else return false
+        }
+    
+
     receiveAttack (coords){
         const location = Number (coords.join(''))        
         if (this.squares[location].length == 2) {
@@ -67,7 +76,9 @@ class GameBoard {
                 this.squares.splice(location, 1, "hit")
             }  else {this.squares.splice(location, 1, "sunk")}            
         }            
-    }  
+    }
+    
+    
 }
 
 /* buildIndex (arrayCCs) {
