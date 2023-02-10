@@ -95,21 +95,4 @@ class GameBoard {
     }
 }
 
-/* buildIndex (arrayCCs) {
-        return Number (arrayCCs.join(''))
-    } 
-     
-    
-    itinerateArr () {
-        for (let i = 0; i < this.squares.length; i++) {
-            if (this.squares[i] ) {
-                
-            }
-            
-        }
-    }
-        
-    
-    */
-
 export default GameBoard

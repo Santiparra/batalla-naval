@@ -17,3 +17,7 @@ h1 {
   grid-template-columns: repeat(10, 50px);
   background-color: aquamarine;
 }
+
+.ship-cell {
+  background-color: grey;;
+}
