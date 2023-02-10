@@ -13,7 +13,6 @@ describe ("ship factory", () => {
         expect(Battleship.hits.length).toStrictEqual(4)
     })
     test("is sink sinking", () => {
-        /* Battleship.isSunk(Battleship.length, Battleship.hits.length) */
         expect(Battleship.isSunk(Battleship.length, Battleship.hits.length)).toBe(true)
     })
 })
