@@ -1,16 +1,20 @@
 import { Ship } from "./Ships";
  
 describe ("ship factory", () => {
-    const newShip = new Ship(2,0,false);
+    const Battleship = new Ship("Battleship",4,0,false)
     test('are ships being created', () => {
-        expect(newShip.hits).toStrictEqual([])
+        expect(Battleship.length).toStrictEqual(4)
     })
     test("is hit hitting", () => {
-        newShip.hit(3)
-        expect(newShip.hits).toContain(3)
+        Battleship.hit(3)
+        Battleship.hit(3)
+        Battleship.hit(3)
+        Battleship.hit(3)
+        expect(Battleship.hits.length).toStrictEqual(4)
     })
     test("is sink sinking", () => {
-        expect(newShip.isSunk(3,3)).toBe(true)
+        /* Battleship.isSunk(Battleship.length, Battleship.hits.length) */
+        expect(Battleship.isSunk(Battleship.length, Battleship.hits.length)).toBe(true)
     })
 })
 
