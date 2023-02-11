@@ -4,24 +4,44 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Black Ops One' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <script src="bundle.js" defer></script>
         <title>Batalla Naval</title>
     </head>
     <body>
-        <div id="start-btn">Comenzar</div>
-        <div id="humanBoard" class="hide"></div>
-        <div id="IAboard" class="hide"></div>
-        <div class="hide" id="ships">
-            <div class="carrier-drag" draggable="true"></div>
-            <div class="battleship-drag" draggable="true"></div>
-            <div class="cruiser-drag" draggable="true"></div>
-            <div class="submarine-drag" draggable="true"></div>
-            <div class="destroyer-drag" draggable="true"></div>
+      <header class="page__header">
+        <nav class="navbar__menu">
+          <h1 class="logo">Batalla Naval <i class="fas fa-ship"></i></h1>
+        </nav>
+        <nav class="sub_nav">
+          <div class="rules"><a href="https://es.wikipedia.org/wiki/Batalla_naval_(juego)">Reglas</a></div>
+          <div class="colorCode">Código de Colores:
+            <div class="undiscovered"><div class="showc csd"></div>Celda sin descubrir </div>
+            <div class="water"><div class="showc agua"></div>Agua  </div>
+            <div class="hit"><div class="showc bt"></div>Barco tocado  </div>
+            <div class="sunked"><div class="showc bh"></div>Barco hundido  </div>
+          </div>
+        </nav>
+      </header>
+      <main class="page__main">
+        <div class="left player"></div>
+        <div class="right ai"></div>
+        <h1 class="headline">Click debajo para Comenzar</h1>
+        <button class="start-game-btn">Empezar</button>
+      </main>
+      <footer>
+        <p>Santiparra </p>
+        <a href="https://github.com/Santiparra">
+        <img class="footer-img" src="assets/github-mark.svg" alt="Logo de Github conteniendo un link"/></a> 
+      </footer>
+      <div id="selection-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <h1>Ubique sus Barcos</h1>
+          <div class="placement-board"></div>
+          <button class="change-alignment-btn">Alineación: Vertical</button>
         </div>
-        <div class="hide options">
-            <div class="rotate">Rotar</div>
-            <div class="random-deploy">Desplegar Aleatorio</div>
-            <div class="start-game">Iniciar Partida</div>
-        </div>
+      </div>
     </body>
 </html>
